@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  hexo:
+    container_name: hexo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    ports:
+      - "14000:4000"

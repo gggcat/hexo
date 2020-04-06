@@ -28,6 +28,7 @@ RUN npm install npm-check-updates -g --save && \
     npm install hexo-generator-category --save && \
     npm install hexo-generator-index --save && \
     npm install hexo-generator-tag --save && \
+    npm install hexo-renderer-marked --save && \
     ncu -u && \
     npm install && \
     echo "*** INSTALLED: hexo modules ***"

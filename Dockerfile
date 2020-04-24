@@ -31,6 +31,7 @@ RUN npm install npm-check-updates -g --save && \
     npm install hexo-generator-search --save && \
     npm install hexo-renderer-marked --save && \
     npm install hexo-toc --save && \
+    npm install hexo-algoliasearch && \
     ncu -u && \
     npm install && \
     echo "*** INSTALLED: hexo modules ***"

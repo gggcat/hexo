@@ -39,8 +39,15 @@ RUN npm install npm-check-updates -g --save && \
 #
 # HEXO themes/tranquilpeak
 #
-RUN git clone https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak themes/tranquilpeak && \
-    cd themes/tranquilpeak && \
+RUN wget --no-check-certificate https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/archive/master.zip && \
+    mv master.zip themes/ && \
+    cd themes && \
+    unzip master.zip && \
+    rm master.zip && \
+    mv hexo-theme-tranquilpeak-master tranquilpeak && \
+    #git clone https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak themes/tranquilpeak && \
+    #cd themes/tranquilpeak && \
+    cd tranquilpeak && \
     ncu -u && \
     npm install && \
     npm run prod && \

@@ -52,7 +52,6 @@ RUN git clone https://github.com/ppoffice/hexo-theme-icarus.git themes/icarus &&
     cd themes/icarus && \
     ncu -u && \
     npm install && \
-    npm run prod && \
     echo "*** INSTALLED: hexo themes/icarus ***"
 
 #

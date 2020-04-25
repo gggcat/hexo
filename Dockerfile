@@ -48,7 +48,7 @@ RUN wget --no-check-certificate https://github.com/LouisBarranqueiro/hexo-theme-
     #git clone https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak themes/tranquilpeak && \
     #cd themes/tranquilpeak && \
     cd tranquilpeak && \
-    ncu -u && \
+    #ncu -u && \
     npm install && \
     npm run prod && \
     echo "*** INSTALLED: hexo themes/tranquilpeak ***"

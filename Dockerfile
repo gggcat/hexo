@@ -65,5 +65,6 @@ RUN git clone https://github.com/ppoffice/hexo-theme-icarus.git themes/icarus &&
 # RUN: need override
 #
 EXPOSE 4000
-RUN hexo generate
-CMD ["hexo", "server"]
+COPY entrypoint.sh .
+ENTRYPOINT ["bash", "entrypoint.sh"]
+CMD ["server"]

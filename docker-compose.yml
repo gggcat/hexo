@@ -8,4 +8,10 @@ services:
       dockerfile: Dockerfile
     tty: true
     ports:
-      - "14000:4000"
+      - "4000:4000"
+    volumes:
+      - ./.hexo_config:/hexo-work/.hexo_config:ro
+      - ./entrypoint.sh:/hexo-work/entrypoint.sh:ro
+    environment:
+      USE_SEARCH_ALGOLIA: "false"
+      HEXO_CONF_DIR: .hexo_config/

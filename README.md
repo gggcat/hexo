@@ -9,7 +9,7 @@ This is HEXO container.
 generate contents.
 
 ``` bash
-docker-compose run generate
+docker-compose run hexo generate
 ```
 
 generate contents and preview.

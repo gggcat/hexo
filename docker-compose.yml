@@ -11,7 +11,27 @@ services:
       - "4000:4000"
     volumes:
       - ./.hexo_config:/hexo-work/.hexo_config:ro
+      - ./.resources:/hexo-work/.resources:ro
       - ./entrypoint.sh:/hexo-work/entrypoint.sh:ro
     environment:
       USE_SEARCH_ALGOLIA: "false"
       HEXO_CONF_DIR: .hexo_config/
+      MY_RESOURCE_DIR: .resources/
+
+  debug:
+    container_name: hexo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    ports:
+      - "5000:4000"
+    entrypoint: /bin/bash
+    volumes:
+      - ./.hexo_config:/hexo-work/.hexo_config:ro
+      - ./.resources:/hexo-work/.resources:ro
+      - ./entrypoint.sh:/hexo-work/entrypoint.sh:ro
+    environment:
+      USE_SEARCH_ALGOLIA: "false"
+      HEXO_CONF_DIR: .hexo_config/
+      MY_RESOURCE_DIR: .resources/

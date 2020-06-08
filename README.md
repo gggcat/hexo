@@ -23,6 +23,7 @@ docker-compose up
 | ENV                | VALUE                              |
 | ------------------ | ---------------------------------- |
 | HEXO_CONF_DIR      | Folder path for Hexo configuration |
+| MY_RESOURCE_DIR    | Folder path for resources          |
 | USE_SEARCH_ALGOLIA | true or false                      |
 
 ## docker-compose.yml
@@ -39,5 +40,6 @@ docker-compose up
       - "4000:4000"
     environment:
       HEXO_CONF_DIR: ./source/.hexo_config/
+      MY_RESOURCE_DIR: .resources/
       USE_SEARCH_ALGOLIA: "true"
 ```

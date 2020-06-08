@@ -16,6 +16,21 @@ function deploy_hexo_config {
 }
 
 #
+# deploy my resource files
+#
+function deploy_my_resource_files {
+    if [ -v ${MY_RESOURCE_DIR} ]; then
+        echo "MY RESOURCE: None"
+    else
+        echo "MY RESOURCE: ${MY_RESOURCE_DIR}"
+        BASE_DIR=$(pwd)
+        cd ${MY_RESOURCE_DIR}
+        tar cvf - * | tar xvf - -C ${BASE_DIR}
+        cd ${BASE_DIR}
+    fi
+}
+
+#
 # Build themes/tranquilpeak
 #
 function build_themes_tranquilpeak {
@@ -48,14 +63,17 @@ case $1 in
     regenerate)
         hexo clean
         hexo generate
+        deploy_my_resource_files
         generate_algolia_index
         ;;
     generate)
         hexo generate
+        deploy_my_resource_files
         generate_algolia_index
         ;;
     server)
         hexo generate
+        deploy_my_resource_files
         hexo server
         ;;
     *)

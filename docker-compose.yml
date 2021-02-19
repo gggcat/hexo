@@ -31,6 +31,7 @@ services:
       - ./.hexo_config:/hexo-work/.hexo_config:ro
       - ./.resources:/hexo-work/.resources:ro
       - ./entrypoint.sh:/hexo-work/entrypoint.sh:ro
+      - ./work:/hexo-work/work:rw
     environment:
       USE_SEARCH_ALGOLIA: "false"
       HEXO_CONF_DIR: .hexo_config/

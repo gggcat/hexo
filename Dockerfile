@@ -31,9 +31,9 @@ RUN npm install npm-check-updates -g --save && \
     npm install hexo-generator-search --save && \
     npm install hexo-renderer-marked --save && \
     npm install hexo-toc --save && \
-    npm install hexo-algoliasearch -- save && \
-    npm install hexo-tag-googlecharts -- save && \
-    npm install hexo-filter-mermaid-diagrams -- save && \
+    npm install hexo-algoliasearch --save && \
+    npm install hexo-tag-googlecharts --save && \
+    npm install hexo-filter-mermaid-diagrams --save && \
     ncu -u && \
     npm install && \
     echo "*** INSTALLED: hexo modules ***"
